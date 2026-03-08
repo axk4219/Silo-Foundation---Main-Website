@@ -5,7 +5,7 @@
     "price": "$25",
     "description": "Classic black tank with the S.I.L.O. Foundation logo. Comfortable and stylish — perfect for events and everyday wear.",
     "image": "assets/images/silo-merch-black-tank.jpg",
-    "link": "mailto:Thesilofoundation@gmail.com?subject=Order: Black Tank Top"
+    "link": "mailto:hello@hawkeyeai.io?subject=Order: Black Tank Top"
   },
   {
     "id": "white-tee",
@@ -13,7 +13,7 @@
     "price": "$25",
     "description": "White cotton t-shirt with our signature 'Boobies' design. Soft, breathable fabric. Available in multiple sizes.",
     "image": "assets/images/silo-merch-white-tee.jpg",
-    "link": "mailto:Thesilofoundation@gmail.com?subject=Order: Boobies White Tee"
+    "link": "mailto:hello@hawkeyeai.io?subject=Order: Boobies White Tee"
   },
   {
     "id": "pink-tanks",
@@ -21,6 +21,6 @@
     "price": "$25",
     "description": "Vibrant pink tank tops showing your support for the cause. Stand out at events and spread awareness in style.",
     "image": "assets/images/silo-merch-pink-tank.jpg",
-    "link": "mailto:Thesilofoundation@gmail.com?subject=Order: Pink Tank Tops"
+    "link": "mailto:hello@hawkeyeai.io?subject=Order: Pink Tank Tops"
   }
 ]

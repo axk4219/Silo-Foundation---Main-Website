@@ -139,7 +139,7 @@ function initChatbot() {
 
     } catch (err) {
       removeTyping();
-      addMessage("I'm having trouble connecting right now. Please try again or contact us at Thesilofoundation@gmail.com or 631-357-1726.", 'bot');
+      addMessage("I'm having trouble connecting right now. Please try again or contact us at hello@hawkeyeai.io or 631-357-1726.", 'bot');
     }
   }
 
@@ -160,11 +160,11 @@ function initChatbot() {
     }
 
     if (lower.includes('store') || lower.includes('merch') || lower.includes('shirt') || lower.includes('tank') || lower.includes('buy') || lower.includes('shop')) {
-      return "We have awesome merchandise! Check out our Black Tank Top, Boobies White Tee, and Pink Tank Tops. Visit our Store page or email Thesilofoundation@gmail.com to place an order. 100% of proceeds go to the cause!";
+      return "We have awesome merchandise! Check out our Black Tank Top, Boobies White Tee, and Pink Tank Tops. Visit our Store page or email hello@hawkeyeai.io to place an order. 100% of proceeds go to the cause!";
     }
 
     if (lower.includes('volunteer') || lower.includes('help') || lower.includes('involved') || lower.includes('join')) {
-      return "We'd love your help! Whether you want to volunteer at events, become a sponsor, or just spread the word, reach out to us at Thesilofoundation@gmail.com or call 631-357-1726. You can also fill out our Contact form!";
+      return "We'd love your help! Whether you want to volunteer at events, become a sponsor, or just spread the word, reach out to us at hello@hawkeyeai.io or call 631-357-1726. You can also fill out our Contact form!";
     }
 
     if (lower.includes('about') || lower.includes('who') || lower.includes('mission') || lower.includes('silo') || lower.includes('foundation')) {
@@ -172,11 +172,11 @@ function initChatbot() {
     }
 
     if (lower.includes('contact') || lower.includes('phone') || lower.includes('email') || lower.includes('reach')) {
-      return "You can reach us at:\nPhone: 631-357-1726\nEmail: Thesilofoundation@gmail.com\nFacebook: ComiskeyParkLovesBoobies\nInstagram: @thesilofoundation\nOr use our Contact form!";
+      return "You can reach us at:\nPhone: 631-357-1726\nEmail: hello@hawkeyeai.io\nFacebook: ComiskeyParkLovesBoobies\nInstagram: @thesilofoundation\nOr use our Contact form!";
     }
 
     if (lower.includes('sponsor')) {
-      return "Interested in sponsoring one of our events? We'd love to partner with you! Contact us at Thesilofoundation@gmail.com for sponsorship packages and benefits. Your support makes a huge difference!";
+      return "Interested in sponsoring one of our events? We'd love to partner with you! Contact us at hello@hawkeyeai.io for sponsorship packages and benefits. Your support makes a huge difference!";
     }
 
     if (lower.includes('member') || lower.includes('membership')) {
@@ -191,6 +191,6 @@ function initChatbot() {
       return "You're welcome! Thank you for your interest in the S.I.L.O. Foundation. Together we can make a difference in the fight against breast cancer!";
     }
 
-    return "Great question! I can help you with information about our events, donations, store, volunteering, or the foundation. What would you like to know more about? You can also reach us directly at Thesilofoundation@gmail.com or 631-357-1726.";
+    return "Great question! I can help you with information about our events, donations, store, volunteering, or the foundation. What would you like to know more about? You can also reach us directly at hello@hawkeyeai.io or 631-357-1726.";
   }
 }
