@@ -1,8 +1,9 @@
 {
   "home": {
-    "image": "assets/images/silo-event.jpeg",
+    "image": "https://ddoglggqvtdzjtiruomq.supabase.co/storage/v1/object/public/silo-images/1772955140453-1ohonp.jpg",
     "heading": "Swan Is Love Outreach",
-    "subheading": "Fighting breast cancer on Long Island through community, music, and love."
+    "subheading": "Fighting breast cancer on Long Island through community, music, and love.",
+    "storyImage": ""
   },
   "about": {
     "image": "",
