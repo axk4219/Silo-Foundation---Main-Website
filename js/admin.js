@@ -7,10 +7,10 @@ const Admin = {
   // --- CONFIG ---
   // Password hash (SHA-256 of "silo2026") — change this to the client's password
   PASSWORD_HASH: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
-  // n8n webhook URL for content updates (set after creating the workflow)
-  WEBHOOK_URL: '',
+  // n8n webhook URL for content updates
+  WEBHOOK_URL: 'https://n8n.srv1426838.hstgr.cloud/webhook/silo-admin-save',
   // n8n webhook URL for image uploads
-  IMAGE_WEBHOOK_URL: '',
+  IMAGE_WEBHOOK_URL: 'https://n8n.srv1426838.hstgr.cloud/webhook/silo-admin-upload',
 
   data: {},
   currentSection: 'events',
@@ -338,7 +338,7 @@ const Admin = {
       formData.append('file', file);
 
       try {
-        const res = await fetch('/api/upload', { method: 'POST', body: formData });
+        const res = await fetch(this.IMAGE_WEBHOOK_URL, { method: 'POST', body: formData });
         if (!res.ok) throw new Error('Upload failed');
         const data = await res.json();
 
@@ -352,7 +352,7 @@ const Admin = {
         }
         this.toast('Image uploaded!');
       } catch (e) {
-        this.toast('Upload failed. Make sure server.py is running.', true);
+        this.toast('Upload failed. Please try again.', true);
       }
     }
   },
@@ -412,7 +412,7 @@ const Admin = {
   async pushUpdate(section) {
     try {
       const file = section === 'hero' ? 'hero' : section;
-      const res = await fetch('/api/save', {
+      const res = await fetch(this.WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -427,7 +427,7 @@ const Admin = {
         throw new Error(`HTTP ${res.status}`);
       }
     } catch (e) {
-      this.toast('Error saving. Make sure server.py is running.', true);
+      this.toast('Error saving. Please try again.', true);
       console.error('[Admin] Save error:', e);
     }
   },
