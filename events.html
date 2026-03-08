@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Events | S.I.L.O. Foundation</title>
+  <meta name="description" content="Join S.I.L.O. Foundation's upcoming breast cancer awareness events on Long Island.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .countdown {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: var(--space-md) 0;
+    }
+    .countdown__block {
+      background: var(--dark-card);
+      border: 1px solid var(--pink);
+      border-radius: var(--radius-md);
+      padding: var(--space-sm) var(--space-md);
+      min-width: 100px;
+      text-align: center;
+      box-shadow: var(--shadow-pink);
+    }
+    .countdown__number {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--pink);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .countdown__label {
+      font-family: var(--font-nav);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white-muted);
+      margin-top: 4px;
+    }
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--space-md) 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--pink);
+      transform: translateX(-50%);
+    }
+    .timeline__item {
+      position: relative;
+      width: 45%;
+      padding: var(--space-md);
+      background: var(--dark-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--white-subtle);
+      margin-bottom: var(--space-md);
+    }
+    .timeline__item:nth-child(odd) {
+      margin-left: 0;
+    }
+    .timeline__item:nth-child(even) {
+      margin-left: 55%;
+    }
+    .timeline__dot {
+      position: absolute;
+      top: 50%;
+      width: 16px;
+      height: 16px;
+      background: var(--pink);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .timeline__item:nth-child(odd) .timeline__dot {
+      right: -8%;
+    }
+    .timeline__item:nth-child(even) .timeline__dot {
+      left: -8%;
+    }
+    .timeline__dot.animate-dot-pulse {
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+    .timeline__month {
+      font-family: var(--font-nav);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--pink);
+      margin-bottom: 4px;
+    }
+    .featured-event {
+      background: var(--dark-card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(214, 77, 129, 0.3);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .featured-event__image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .featured-event__body {
+      padding: var(--space-lg);
+    }
+    .featured-event__meta {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      margin: var(--space-sm) 0 var(--space-md);
+    }
+    .featured-event__meta-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      color: var(--white-muted);
+      font-size: 0.95rem;
+    }
+    .featured-event__meta-item svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--pink);
+    }
+    /* Gallery styles (merged from past-events) */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--space-sm);
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--duration-slow) ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-item__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(214, 77, 129, 0.8), transparent);
+      opacity: 0;
+      transition: opacity var(--duration-base) ease;
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-sm);
+    }
+    .gallery-item:hover .gallery-item__overlay {
+      opacity: 1;
+    }
+    .gallery-item__title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+    .highlight-card {
+      background: var(--dark-card);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      border: 1px solid var(--white-subtle);
+      border-left: 4px solid var(--pink);
+    }
+    .highlight-card__year {
+      font-family: var(--font-nav);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--pink);
+      margin-bottom: 4px;
+    }
+    @media (max-width: 767px) {
+      .timeline::before { left: 20px; }
+      .timeline__item { width: calc(100% - 50px); margin-left: 50px !important; }
+      .timeline__dot { left: -36px !important; right: auto !important; }
+      .countdown__block { min-width: 75px; padding: var(--space-xs) var(--space-sm); }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/silo-logo-full.jpeg" alt="S.I.L.O. Foundation Logo">
+        <span class="nav__logo-text">S.I.L.O.</span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="events.html" class="nav__link nav__link--active">Events</a>
+        <a href="store.html" class="nav__link">Store</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+        <a href="donate.html" class="nav__donate-btn">Donate</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav__mobile-menu">
+    <a href="index.html" class="nav__link">Home</a>
+    <a href="about.html" class="nav__link">About</a>
+    <a href="events.html" class="nav__link nav__link--active">Events</a>
+    <a href="store.html" class="nav__link">Store</a>
+    <a href="contact.html" class="nav__link">Contact</a>
+    <a href="donate.html" class="nav__link" style="color: var(--pink);">Donate</a>
+  </div>
+
+  <!-- Hero with Countdown -->
+  <section class="hero hero--half" style="background: var(--dark);">
+    <div class="hero__content" style="width: 100%;">
+      <h1 class="reveal reveal--up">Upcoming <span style="color: var(--pink);">Events</span></h1>
+      <p class="reveal reveal--up reveal--delay-1" style="max-width: 600px; margin: var(--space-xs) auto 0; font-size: 1.1rem;">
+        14th Breast Cancer Charity Music Festival starts in:
+      </p>
+      <div class="countdown reveal reveal--up reveal--delay-2">
+        <div class="countdown__block">
+          <div class="countdown__number" id="countdown-days">--</div>
+          <div class="countdown__label">Days</div>
+        </div>
+        <div class="countdown__block">
+          <div class="countdown__number" id="countdown-hours">--</div>
+          <div class="countdown__label">Hours</div>
+        </div>
+        <div class="countdown__block">
+          <div class="countdown__number" id="countdown-mins">--</div>
+          <div class="countdown__label">Minutes</div>
+        </div>
+        <div class="countdown__block">
+          <div class="countdown__number" id="countdown-secs">--</div>
+          <div class="countdown__label">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Event: Music Festival -->
+  <section class="section section--darker">
+    <div class="container">
+      <div id="featured-event">
+        <!-- Data-driven: loaded from data/events.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Timeline -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="reveal reveal--up">Event Calendar</h2>
+        <hr class="pink-rule reveal reveal--delay-1">
+      </div>
+
+      <div class="timeline" id="event-timeline">
+        <!-- Data-driven: loaded from data/events.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="parallax-section">
+    <div class="parallax-section__bg" style="background-image: url('assets/images/silo-event2.jpeg');"></div>
+    <div class="parallax-section__overlay"></div>
+    <div class="parallax-section__content container text-center">
+      <h2 class="reveal reveal--up">Want to Get Involved?</h2>
+      <p class="reveal reveal--up reveal--delay-1" style="max-width: 500px; margin: var(--space-sm) auto var(--space-md); font-size: 1.1rem;">
+        Whether you want to volunteer, sponsor, or participate — we'd love to have you join our fight.
+      </p>
+      <div style="display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn--primary reveal reveal--up reveal--delay-2">Contact Us</a>
+        <a href="donate.html" class="btn btn--outline reveal reveal--up reveal--delay-3">Donate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAST EVENTS / GALLERY ============ -->
+  <section class="section section--darker" id="past-events">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="reveal reveal--up">Our Impact <span style="color: var(--pink);">Through the Years</span></h2>
+        <hr class="pink-rule reveal reveal--delay-1">
+        <p class="reveal reveal--up reveal--delay-2">Browse photos and highlights from our past events.</p>
+      </div>
+      <div class="gallery-grid" id="gallery-photos">
+        <!-- Data-driven: loaded from data/gallery.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Highlights -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="reveal reveal--up">Event Highlights</h2>
+        <hr class="pink-rule reveal reveal--delay-1">
+      </div>
+      <div class="grid grid--2" id="event-highlights" style="max-width: 900px; margin: 0 auto;">
+        <!-- Data-driven: loaded from data/gallery.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/images/silo-logo-full.jpeg" alt="S.I.L.O. Foundation">
+            <span class="nav__logo-text">S.I.L.O. Foundation</span>
+          </div>
+          <p class="footer__tagline">Swan Is Love Outreach Foundation L.T.D. — Fighting breast cancer on Long Island with unwavering passion and love.</p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/ComiskeyParkLovesBoobies" target="_blank" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/thesilofoundation" target="_blank" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="events.html" class="footer__link">Upcoming Events</a>
+          <a href="events.html#past-events" class="footer__link">Past Events</a>
+          <a href="store.html" class="footer__link">Store</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact Us</h4>
+          <a href="tel:6313571726" class="footer__link">631-357-1726</a>
+          <a href="mailto:Thesilofoundation@gmail.com" class="footer__link">Thesilofoundation@gmail.com</a>
+          <a href="contact.html" class="footer__link">Contact Form</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; <span class="footer__year">2026</span> Swan Is Love Outreach Foundation L.T.D. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot -->
+  <div class="chatbot-bubble" id="chatbot-toggle" title="Chat with S.I.L.O.">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+  </div>
+  <div class="chatbot-window" id="chatbot-window">
+    <div class="chatbot-header">
+      <span class="chatbot-header__title">Chat with S.I.L.O.</span>
+      <button class="chatbot-header__close" id="chatbot-close">&ndash;</button>
+    </div>
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="chatbot-msg chatbot-msg--bot">Hi there! I'm the S.I.L.O. Foundation assistant. How can I help you today?</div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="chatbot-input" placeholder="Type a message..." autocomplete="off">
+      <button id="chatbot-send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ribbon-scroll.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script>
+    DataLoader.loadFeaturedEvent('featured-event');
+    DataLoader.loadTimeline('event-timeline');
+    DataLoader.loadGalleryPhotos('gallery-photos');
+    DataLoader.loadHighlights('event-highlights');
+  </script>
+  <script src="js/pages/events.js"></script>
+</body>
+</html>

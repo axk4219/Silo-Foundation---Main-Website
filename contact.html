@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | S.I.L.O. Foundation</title>
+  <meta name="description" content="Get in touch with the S.I.L.O. Foundation. We'd love to hear from you.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .form-group {
+      margin-bottom: var(--space-md);
+      position: relative;
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--font-nav);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--white-muted);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--dark-lighter);
+      border: 1px solid var(--white-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--white);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color var(--duration-base) ease, box-shadow var(--duration-base) ease;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px rgba(214, 77, 129, 0.15);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.25);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+    .contact-info-card {
+      background: var(--dark-card);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      border: 1px solid var(--white-subtle);
+      margin-bottom: var(--space-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      transition: border-color var(--duration-base) ease, transform var(--duration-base) ease;
+    }
+    .contact-info-card:hover {
+      border-color: rgba(214, 77, 129, 0.3);
+      transform: translateX(4px);
+    }
+    .contact-info-card__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--pink-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-info-card__icon svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--pink);
+    }
+    .contact-info-card__label {
+      font-family: var(--font-nav);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white-muted);
+    }
+    .contact-info-card__value {
+      font-size: 1.05rem;
+      color: var(--white);
+      margin-top: 2px;
+    }
+    @media (max-width: 767px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/silo-logo-full.jpeg" alt="S.I.L.O. Foundation Logo">
+        <span class="nav__logo-text">S.I.L.O.</span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="events.html" class="nav__link">Events</a>
+        <a href="store.html" class="nav__link">Store</a>
+        <a href="contact.html" class="nav__link nav__link--active">Contact</a>
+        <a href="donate.html" class="nav__donate-btn">Donate</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav__mobile-menu">
+    <a href="index.html" class="nav__link">Home</a>
+    <a href="about.html" class="nav__link">About</a>
+    <a href="events.html" class="nav__link">Events</a>
+    <a href="store.html" class="nav__link">Store</a>
+    <a href="contact.html" class="nav__link nav__link--active">Contact</a>
+    <a href="donate.html" class="nav__link" style="color: var(--pink);">Donate</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero hero--short" style="background: var(--dark-lighter);">
+    <div class="hero__content">
+      <h1 class="reveal reveal--up">Get <span style="color: var(--pink);">In Touch</span></h1>
+      <p class="reveal reveal--up reveal--delay-1" style="max-width: 500px; margin: var(--space-sm) auto 0; font-size: 1.1rem;">
+        Have a question, want to volunteer, or interested in sponsoring? We'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Form -->
+        <div class="reveal reveal--left">
+          <h2 style="margin-bottom: var(--space-md);">Send Us a Message</h2>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+            </div>
+            <div class="form-group" style="display: flex; align-items: center; gap: 10px; margin-bottom: var(--space-sm);">
+              <input type="checkbox" id="subscribe" name="subscribe" style="width: 18px; height: 18px; accent-color: var(--pink); cursor: pointer;">
+              <label for="subscribe" style="cursor: pointer; font-size: 0.95rem; color: var(--text-secondary);">Subscribe to our newsletter for event updates and community news</label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--large" style="width: 100%;">Send Message</button>
+            <div id="form-status" style="display:none; padding: 14px 16px; border-radius: 8px; margin-top: 16px; text-align: center; font-size: 15px;"></div>
+          </form>
+          <script>
+            document.getElementById('contact-form').addEventListener('submit', async function(e) {
+              e.preventDefault();
+              const btn = this.querySelector('button[type="submit"]');
+              const status = document.getElementById('form-status');
+              const originalText = btn.textContent;
+              btn.disabled = true;
+              btn.textContent = 'Sending...';
+              status.style.display = 'none';
+              const data = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+              };
+              const wantsNewsletter = document.getElementById('subscribe').checked;
+              try {
+                const res = await fetch('https://n8n.srv1426838.hstgr.cloud/webhook/silo-contact-form', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(data)
+                });
+                if (wantsNewsletter) {
+                  fetch('https://n8n.srv1426838.hstgr.cloud/webhook/silo-new-subscriber', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: data.name, email: data.email, source: 'contact-form' })
+                  }).catch(() => {});
+                }
+                const result = await res.json();
+                status.style.display = 'block';
+                if (result.success) {
+                  status.style.background = 'rgba(16, 185, 129, 0.15)';
+                  status.style.color = '#10b981';
+                  status.textContent = result.message;
+                  this.reset();
+                } else {
+                  status.style.background = 'rgba(239, 68, 68, 0.15)';
+                  status.style.color = '#ef4444';
+                  status.textContent = result.message || 'Something went wrong. Please try again.';
+                }
+              } catch (err) {
+                status.style.display = 'block';
+                status.style.background = 'rgba(239, 68, 68, 0.15)';
+                status.style.color = '#ef4444';
+                status.textContent = 'Unable to send. Please email us at Thesilofoundation@gmail.com';
+              }
+              btn.disabled = false;
+              btn.textContent = originalText;
+            });
+          </script>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h2 class="reveal reveal--right" style="margin-bottom: var(--space-md);">Contact Information</h2>
+
+          <a href="tel:6313571726" class="contact-info-card reveal reveal--right reveal--delay-1">
+            <div class="contact-info-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-card__label">Phone</div>
+              <div class="contact-info-card__value">631-357-1726</div>
+            </div>
+          </a>
+
+          <a href="mailto:Thesilofoundation@gmail.com" class="contact-info-card reveal reveal--right reveal--delay-2">
+            <div class="contact-info-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-card__label">Email</div>
+              <div class="contact-info-card__value">Thesilofoundation@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://www.facebook.com/ComiskeyParkLovesBoobies" target="_blank" class="contact-info-card reveal reveal--right reveal--delay-3">
+            <div class="contact-info-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-card__label">Facebook</div>
+              <div class="contact-info-card__value">ComiskeyParkLovesBoobies</div>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/thesilofoundation" target="_blank" class="contact-info-card reveal reveal--right reveal--delay-4">
+            <div class="contact-info-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-card__label">Instagram</div>
+              <div class="contact-info-card__value">@thesilofoundation</div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/images/silo-logo-full.jpeg" alt="S.I.L.O. Foundation">
+            <span class="nav__logo-text">S.I.L.O. Foundation</span>
+          </div>
+          <p class="footer__tagline">Swan Is Love Outreach Foundation L.T.D. — Fighting breast cancer on Long Island with unwavering passion and love.</p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/ComiskeyParkLovesBoobies" target="_blank" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/thesilofoundation" target="_blank" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="events.html" class="footer__link">Upcoming Events</a>
+          <a href="events.html#past-events" class="footer__link">Past Events</a>
+          <a href="store.html" class="footer__link">Store</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact Us</h4>
+          <a href="tel:6313571726" class="footer__link">631-357-1726</a>
+          <a href="mailto:Thesilofoundation@gmail.com" class="footer__link">Thesilofoundation@gmail.com</a>
+          <a href="contact.html" class="footer__link">Contact Form</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; <span class="footer__year">2026</span> Swan Is Love Outreach Foundation L.T.D. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot -->
+  <div class="chatbot-bubble" id="chatbot-toggle" title="Chat with S.I.L.O.">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+  </div>
+  <div class="chatbot-window" id="chatbot-window">
+    <div class="chatbot-header">
+      <span class="chatbot-header__title">Chat with S.I.L.O.</span>
+      <button class="chatbot-header__close" id="chatbot-close">&ndash;</button>
+    </div>
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="chatbot-msg chatbot-msg--bot">Hi there! I'm the S.I.L.O. Foundation assistant. How can I help you today?</div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="chatbot-input" placeholder="Type a message..." autocomplete="off">
+      <button id="chatbot-send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ribbon-scroll.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/data-loader.js"></script>
+</body>
+</html>

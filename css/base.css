@@ -1,0 +1,118 @@
+/* ============================================
+   Base Typography & Global Styles
+   ============================================ */
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--dark);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--white);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+p {
+  color: var(--white-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 70ch;
+}
+
+.text-pink {
+  color: var(--pink);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+::selection {
+  background: var(--pink);
+  color: var(--white);
+}
+
+/* Hide default scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+/* Custom Ribbon Scroll Indicator */
+.ribbon-scrollbar {
+  position: fixed;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 800;
+  width: 80px;
+  height: 70vh;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.ribbon-scrollbar.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ribbon-scrollbar__track {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  transform: translateX(-50%);
+  background: rgba(214, 77, 129, 0.15);
+  border-radius: 1px;
+}
+
+.ribbon-scrollbar__thumb {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.08s linear;
+  cursor: grab;
+  filter: drop-shadow(0 0 10px rgba(214, 77, 129, 0.5));
+}
+
+.ribbon-scrollbar__thumb:active {
+  cursor: grabbing;
+}
+
+.ribbon-scrollbar__thumb svg {
+  width: 70px;
+  height: 105px;
+}

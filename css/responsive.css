@@ -1,0 +1,125 @@
+/* ============================================
+   Responsive Breakpoints (Mobile-First)
+   ============================================ */
+
+/* --- Mobile (< 768px) --- */
+@media (max-width: 767px) {
+  .nav__links {
+    display: none;
+  }
+
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .footer__tagline {
+    margin: 0 auto;
+  }
+
+  .footer__social {
+    justify-content: center;
+  }
+
+  .section {
+    padding: var(--space-lg) 0;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .btn--large {
+    padding: 14px 32px;
+    font-size: 1rem;
+  }
+
+  /* Chatbot mobile */
+  .chatbot-window {
+    width: calc(100% - 24px);
+    right: 12px;
+    bottom: 12px;
+    height: 70vh;
+    max-height: 500px;
+  }
+
+  .chatbot-bubble {
+    bottom: 20px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
+  }
+
+  /* Disable parallax on mobile */
+  .parallax-section__bg {
+    background-attachment: scroll !important;
+    inset: 0;
+  }
+}
+
+/* --- Small (480px+) --- */
+@media (min-width: 480px) {
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Medium (768px+) --- */
+@media (min-width: 768px) {
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Large (1024px+) --- */
+@media (min-width: 1024px) {
+  .nav__hamburger {
+    display: none;
+  }
+
+  .nav__links {
+    display: flex;
+  }
+
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer__grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+}
+
+/* --- XL (1280px+) --- */
+@media (min-width: 1280px) {
+  :root {
+    --container-padding: 2rem;
+  }
+
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+}

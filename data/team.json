@@ -1,0 +1,23 @@
+[
+  {
+    "id": "sequwan",
+    "name": "Sequwan Olivera",
+    "role": "CEO / Executive Director",
+    "photo": "",
+    "bio": "Visionary leader and founder of the S.I.L.O. Foundation. Sequwan drives the mission forward with passion and dedication to breast cancer awareness on Long Island."
+  },
+  {
+    "id": "jeffery",
+    "name": "Jeffery Comiskey",
+    "role": "Director",
+    "photo": "",
+    "bio": "Co-founder and director who brings community connections and event expertise. Jeffery is the heart behind many of our signature fundraisers."
+  },
+  {
+    "id": "ethan",
+    "name": "Ethan Carpenter",
+    "role": "Treasurer",
+    "photo": "",
+    "bio": "Manages the foundation's finances with transparency and integrity, ensuring every dollar goes toward making a difference."
+  }
+]

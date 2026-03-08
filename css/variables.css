@@ -1,0 +1,63 @@
+/* ============================================
+   S.I.L.O. Foundation - Design Tokens
+   ============================================ */
+
+:root {
+  /* Brand Colors */
+  --pink: rgb(214, 77, 129);
+  --pink-light: rgba(214, 77, 129, 0.15);
+  --pink-glow: rgba(214, 77, 129, 0.4);
+  --pink-hover: rgb(230, 95, 148);
+  --maroon: rgb(184, 57, 105);
+  --dark: rgb(22, 22, 22);
+  --dark-lighter: rgb(32, 32, 32);
+  --dark-card: rgb(40, 40, 40);
+  --dark-card-hover: rgb(50, 50, 50);
+  --white: #ffffff;
+  --white-muted: rgba(255, 255, 255, 0.7);
+  --white-subtle: rgba(255, 255, 255, 0.12);
+
+  /* Gradients */
+  --gradient-pink: linear-gradient(135deg, var(--pink), var(--maroon));
+  --gradient-pink-hover: linear-gradient(135deg, var(--pink-hover), var(--pink));
+  --gradient-dark: linear-gradient(180deg, var(--dark) 0%, var(--dark-lighter) 100%);
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans Pro', 'Segoe UI', sans-serif;
+  --font-nav: 'Montserrat', 'Helvetica Neue', sans-serif;
+
+  /* Spacing Scale (8px base) */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 8rem;
+
+  /* Container */
+  --container-max: 1200px;
+  --container-padding: 1.5rem;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 800ms;
+
+  /* Borders */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
+  --shadow-pink: 0 4px 30px rgba(214, 77, 129, 0.3);
+  --shadow-pink-hover: 0 8px 40px rgba(214, 77, 129, 0.5);
+
+  /* Header */
+  --header-height: 120px;
+}

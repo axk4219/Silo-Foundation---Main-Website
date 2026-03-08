@@ -1,0 +1,44 @@
+[
+  {
+    "id": "lithology-brewing",
+    "name": "Lithology Brewing",
+    "image": "",
+    "url": ""
+  },
+  {
+    "id": "south-shore-craft-brewery",
+    "name": "South Shore Craft Brewery",
+    "image": "",
+    "url": ""
+  },
+  {
+    "id": "stony-brook-cancer-foundation",
+    "name": "Stony Brook Cancer Foundation",
+    "image": "",
+    "url": ""
+  },
+  {
+    "id": "flanagans-pub-ny",
+    "name": "Flanagan's Pub NY",
+    "image": "",
+    "url": ""
+  },
+  {
+    "id": "katies-of-smithtown",
+    "name": "Katie's of Smithtown",
+    "image": "",
+    "url": ""
+  },
+  {
+    "id": "that-meat-ball-place-li",
+    "name": "That Meat Ball Place LI",
+    "image": "",
+    "url": ""
+  },
+  {
+    "id": "take-two-brewery",
+    "name": "Take Two Brewery",
+    "image": "",
+    "url": ""
+  }
+]

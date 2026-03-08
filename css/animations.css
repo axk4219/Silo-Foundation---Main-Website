@@ -1,0 +1,455 @@
+/* ============================================
+   Keyframes & Scroll-Reveal Classes
+   ============================================ */
+
+/* --- Keyframe Definitions --- */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(214, 77, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(214, 77, 129, 0.6), 0 0 60px rgba(214, 77, 129, 0.2);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounceDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 120px;
+  }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: var(--pink); }
+  50% { border-color: transparent; }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pinkLineExpand {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(214, 77, 129, 0.4);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 10px rgba(214, 77, 129, 0);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Scroll Reveal Base --- */
+
+.reveal {
+  opacity: 0;
+  transition: opacity var(--duration-slow) var(--ease-out-expo),
+              transform var(--duration-slow) var(--ease-out-expo);
+  will-change: opacity, transform;
+}
+
+.reveal--up {
+  transform: translateY(40px);
+}
+
+.reveal--left {
+  transform: translateX(-40px);
+}
+
+.reveal--right {
+  transform: translateX(40px);
+}
+
+.reveal--scale {
+  transform: scale(0.85);
+}
+
+/* Revealed State */
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger Delays */
+.reveal--delay-1 { transition-delay: 0.1s; }
+.reveal--delay-2 { transition-delay: 0.2s; }
+.reveal--delay-3 { transition-delay: 0.3s; }
+.reveal--delay-4 { transition-delay: 0.4s; }
+.reveal--delay-5 { transition-delay: 0.5s; }
+
+/* --- Utility Animation Classes --- */
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce-down {
+  animation: bounceDown 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(214, 77, 129, 0.15) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-dot-pulse {
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+/* Pink horizontal rule with expand animation */
+.pink-rule {
+  width: 120px;
+  height: 3px;
+  background: var(--gradient-pink);
+  border: none;
+  border-radius: var(--radius-full);
+  margin: var(--space-sm) auto;
+  transform-origin: center;
+}
+
+.pink-rule.revealed {
+  animation: pinkLineExpand 0.8s var(--ease-out-expo) forwards;
+}
+
+/* ============================================
+   ENHANCED ANIMATIONS
+   ============================================ */
+
+/* --- 1. Scroll Progress Bar (Ribbon Style) --- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--pink),
+    var(--maroon),
+    var(--pink),
+    rgba(255, 180, 210, 0.9),
+    var(--pink),
+    var(--maroon),
+    var(--pink)
+  );
+  background-size: 300% 100%;
+  animation: ribbonProgressShimmer 3s linear infinite;
+  z-index: 1100;
+  width: 0%;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 12px rgba(214, 77, 129, 0.6), 0 0 4px rgba(214, 77, 129, 0.8);
+}
+
+.scroll-progress::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pink);
+  box-shadow: 0 0 12px var(--pink), 0 0 24px rgba(214, 77, 129, 0.4);
+}
+
+@keyframes ribbonProgressShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* --- 2. Text Gradient Shimmer --- */
+@keyframes textShimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--white) 0%,
+    var(--pink) 25%,
+    var(--white) 50%,
+    var(--pink) 75%,
+    var(--white) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+}
+
+/* --- 3. Animated Background Gradient --- */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.section--animated-bg {
+  background: linear-gradient(
+    135deg,
+    rgb(22, 22, 22) 0%,
+    rgb(30, 20, 28) 25%,
+    rgb(22, 22, 22) 50%,
+    rgb(28, 18, 30) 75%,
+    rgb(22, 22, 22) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease-in-out infinite;
+}
+
+/* --- 4. Image Reveal Wipe --- */
+.reveal-wipe {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-wipe::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-pink);
+  transform: translateX(0);
+  z-index: 2;
+  transition: transform 0.8s var(--ease-out-expo);
+}
+
+.reveal-wipe.revealed::after {
+  transform: translateX(101%);
+}
+
+/* --- 5. 3D Card Tilt --- */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d .card__body {
+  transform: translateZ(20px);
+}
+
+.card-3d .card__badge {
+  transform: translateZ(40px);
+}
+
+/* Light reflection overlay for 3D cards */
+.card-3d::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(214, 77, 129, 0.12) 0%,
+    transparent 60%
+  );
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-base) ease;
+  border-radius: inherit;
+}
+
+.card-3d:hover::before {
+  opacity: 1;
+}
+
+/* --- 6. Magnetic Cursor Effect --- */
+.magnetic {
+  transition: transform var(--duration-base) var(--ease-out-expo);
+}
+
+/* --- 7. Staggered Nav Letter Hover --- */
+.nav__link .letter {
+  display: inline-block;
+  transition: transform 0.3s var(--ease-out-back), color 0.3s ease;
+}
+
+.nav__link:hover .letter {
+  color: var(--pink);
+}
+
+/* --- 8. Pink Ribbon SVG Draw --- */
+@keyframes ribbonDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.ribbon-svg {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.ribbon-svg path {
+  fill: none;
+  stroke: var(--pink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: ribbonDraw 3s var(--ease-out-expo) 1s forwards;
+}
+
+/* --- 9. Slot Machine Counter --- */
+.slot-counter {
+  display: inline-flex;
+  overflow: hidden;
+  height: 1em;
+  line-height: 1;
+}
+
+.slot-counter__digit {
+  display: inline-block;
+  animation: slotSpin 0.6s var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+@keyframes slotSpin {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(8%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --- 10. Enhanced Particle Ribbon Shapes (handled in JS) --- */
+
+/* --- Bonus: Button ripple effect --- */
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 60%);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  border-radius: inherit;
+}
+
+.btn:active::after {
+  transform: scale(2.5);
+  opacity: 1;
+  transition: 0s;
+}

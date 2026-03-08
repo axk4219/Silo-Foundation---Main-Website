@@ -1,0 +1,9 @@
+.DS_Store
+.mcp.json
+~$*
+*.py
+server.py
+generate_*.py
+*.docx
+*.pdf
+*.md

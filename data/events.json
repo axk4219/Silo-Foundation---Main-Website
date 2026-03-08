@@ -1,0 +1,46 @@
+[
+  {
+    "id": "music-festival-2026",
+    "title": "14th Annual Breast Cancer Charity Music Festival",
+    "date": "2026-08-01",
+    "time": "2:00 PM - 10:00 PM",
+    "location": "485 Lake Ave, St James, NY 11780",
+    "description": "Our flagship annual event featuring live music, food, raffles, games, rides, and a carnival \u2014 all in the fight against breast cancer. Family friendly!",
+    "image": "assets/images/silo-event.jpeg",
+    "link": "",
+    "featured": true
+  },
+  {
+    "id": "paint-night-2026",
+    "title": "Paint Night Fundraiser",
+    "date": "2026-04-25",
+    "time": "7:00 PM - 9:30 PM",
+    "location": "Katie's of Smithtown, Smithtown, NY",
+    "description": "An evening of creativity and community! Join us for a guided paint night where all proceeds go toward breast cancer awareness and support.",
+    "image": "assets/images/silo-event2.jpeg",
+    "link": "",
+    "featured": false
+  },
+  {
+    "id": "golf-outing-2026",
+    "title": "Charity Golf Outing",
+    "date": "2026-06-20",
+    "time": "8:00 AM - 4:00 PM",
+    "location": "Long Island, NY",
+    "description": "Hit the links for a cause! Our annual charity golf outing brings together golfers of all skill levels for a day of fun and fundraising.",
+    "image": "assets/images/silo-logo-full.jpeg",
+    "link": "",
+    "featured": false
+  },
+  {
+    "id": "toys-for-shots-2026",
+    "title": "Toys for Shots & Local Food Drive",
+    "date": "2026-12-01",
+    "time": "",
+    "location": "Comiskey Park Bar, 485 Lake Ave, St James, NY 11780",
+    "description": "Partnering with Toys for Tots and St. Philip and James Roman Catholic Church to bring joy and food to families in need.",
+    "image": "assets/images/silo-hero.jpeg",
+    "link": "",
+    "featured": false
+  }
+]

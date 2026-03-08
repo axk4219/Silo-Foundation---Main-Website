@@ -1,0 +1,40 @@
+[
+  {
+    "id": "music-fest-2025",
+    "title": "13th Breast Cancer Music Festival",
+    "date": "2025-08-02",
+    "description": "Raised roughly $30K for the Stony Brook Cancer Foundation. Our biggest year yet with incredible community turnout.",
+    "images": [
+      "assets/images/silo-event.jpeg",
+      "assets/images/silo-hero.jpeg",
+      "assets/images/silo-logo-full.jpeg"
+    ]
+  },
+  {
+    "id": "bra-tender-2025",
+    "title": "Bra-Tender Competition 2025",
+    "date": "2025-07-01",
+    "description": "30 establishments across Long Island competed to raise the most money. An incredible display of community spirit.",
+    "images": [
+      "assets/images/silo-event2.jpeg"
+    ]
+  },
+  {
+    "id": "toys-for-shots-2024",
+    "title": "Toys for Shots & Food Drive 2024",
+    "date": "2024-12-01",
+    "description": "Partnered with Toys for Tots and St. Philip and James Church to bring joy and food to families during the holidays.",
+    "images": [
+      "assets/images/silo-hero.jpeg"
+    ]
+  },
+  {
+    "id": "decade-of-impact",
+    "title": "A Decade of Impact",
+    "date": "2024-01-01",
+    "description": "Over 10 years of fighting breast cancer on Long Island, establishing one of the most prominent fundraisers in the region.",
+    "images": [
+      "assets/images/silo-event.jpeg"
+    ]
+  }
+]

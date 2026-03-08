@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | S.I.L.O. Foundation</title>
+  <meta name="description" content="Learn about the Swan Is Love Outreach Foundation - our mission, our team, and our fight against breast cancer on Long Island.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .team-card {
+      text-align: center;
+      padding: var(--space-md);
+      background: var(--dark-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--white-subtle);
+      transition: transform var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) ease;
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-pink);
+      border-color: rgba(214, 77, 129, 0.3);
+    }
+    .team-card__photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto var(--space-sm);
+      background: var(--dark-lighter);
+      border: 3px solid var(--pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--pink);
+      overflow: hidden;
+      transition: border-color var(--duration-base) ease;
+    }
+    .team-card:hover .team-card__photo {
+      border-color: var(--pink-hover);
+      box-shadow: 0 0 20px rgba(214, 77, 129, 0.3);
+    }
+    .team-card__name {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      margin-bottom: 4px;
+    }
+    .team-card__role {
+      color: var(--pink);
+      font-family: var(--font-nav);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .about-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+    .about-story__image {
+      border-radius: var(--radius-md);
+      border: 2px solid var(--pink);
+      box-shadow: var(--shadow-pink);
+    }
+    .value-card {
+      text-align: center;
+      padding: var(--space-md);
+    }
+    .value-card__icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto var(--space-sm);
+    }
+    @media (max-width: 767px) {
+      .about-story {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/silo-logo-full.jpeg" alt="S.I.L.O. Foundation Logo">
+        <span class="nav__logo-text">S.I.L.O.</span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="about.html" class="nav__link nav__link--active">About</a>
+        <a href="events.html" class="nav__link">Events</a>
+        <a href="store.html" class="nav__link">Store</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+        <a href="donate.html" class="nav__donate-btn">Donate</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="nav__mobile-menu">
+    <a href="index.html" class="nav__link">Home</a>
+    <a href="about.html" class="nav__link nav__link--active">About</a>
+    <a href="events.html" class="nav__link">Events</a>
+    <a href="store.html" class="nav__link">Store</a>
+    <a href="contact.html" class="nav__link">Contact</a>
+    <a href="donate.html" class="nav__link" style="color: var(--pink);">Donate</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero hero--half" style="position: relative;">
+    <div class="hero__bg" id="about-hero-bg" style="background-image: url('assets/images/silo-event.jpeg');"></div>
+    <div class="hero__overlay"></div>
+    <!-- Animated pink accent line at top -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-pink); transform-origin: left; animation: pinkLineExpand 1.2s var(--ease-out-expo) forwards; z-index: 10;"></div>
+    <div class="hero__content">
+      <h1 class="reveal reveal--up">About <span style="color: var(--pink);">S.I.L.O.</span></h1>
+      <p class="reveal reveal--up reveal--delay-1" style="max-width: 600px; margin: var(--space-sm) auto 0; font-size: 1.2rem;">
+        Swan Is Love Outreach Foundation L.T.D. — A pillar of hope and love in our community.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="section section--darker">
+    <div class="container">
+      <div class="about-story">
+        <div>
+          <h2 class="reveal reveal--left" style="margin-bottom: var(--space-sm);">Our Story</h2>
+          <hr class="pink-rule reveal reveal--left reveal--delay-1" style="margin: 0 0 var(--space-md) 0;">
+          <p class="reveal reveal--left reveal--delay-2" style="margin-bottom: var(--space-sm);">
+            The Swan Is Love Outreach Foundation L.T.D. was brought to fruition with unwavering passion and an unparalleled desire to be a light when members of our community are surrounded by darkness.
+          </p>
+          <p class="reveal reveal--left reveal--delay-3" style="margin-bottom: var(--space-sm);">
+            What started as an initial desire to host a celebratory event transformed into sustained charitable work. Our directors have over 10 years of experience in breast cancer fundraising, culminating in establishing one of the most prominent breast cancer fundraisers on Long Island.
+          </p>
+          <p class="reveal reveal--left reveal--delay-4">
+            The organization aims to expand beyond breast cancer fundraising to support our community comprehensively, serving as a pillar of hope and love.
+          </p>
+        </div>
+        <div class="reveal reveal--right reveal--delay-2">
+          <img id="about-story-img" src="assets/images/silo-event2.jpeg" alt="S.I.L.O. Foundation Community" class="about-story__image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Team -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="reveal reveal--up">Our Leadership</h2>
+        <hr class="pink-rule reveal reveal--delay-1">
+        <p class="reveal reveal--up reveal--delay-2">Established entrepreneurs with deep Long Island roots, committed to building an empathetic and engaged community.</p>
+      </div>
+      <div class="grid grid--3" id="team-members" style="max-width: 900px; margin: 0 auto;">
+        <!-- Data-driven: loaded from data/team.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section section--darker">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="reveal reveal--up">What We Stand For</h2>
+        <hr class="pink-rule reveal reveal--delay-1">
+      </div>
+      <div class="grid grid--3" style="max-width: 900px; margin: 0 auto;">
+        <div class="value-card reveal reveal--up reveal--delay-1">
+          <svg class="value-card__icon" viewBox="0 0 24 24" fill="var(--pink)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <h3 style="margin-bottom: var(--space-xs);">Community Love</h3>
+          <p class="card__text">We believe in the power of community coming together to support those in need.</p>
+        </div>
+        <div class="value-card reveal reveal--up reveal--delay-2">
+          <svg class="value-card__icon" viewBox="0 0 24 24" fill="var(--pink)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <h3 style="margin-bottom: var(--space-xs);">Awareness</h3>
+          <p class="card__text">Providing educational resources about cancer services, prevention, and support.</p>
+        </div>
+        <div class="value-card reveal reveal--up reveal--delay-3">
+          <svg class="value-card__icon" viewBox="0 0 24 24" fill="var(--pink)"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          <h3 style="margin-bottom: var(--space-xs);">Partnership</h3>
+          <p class="card__text">Collaborating with sponsors, donors, musicians, and local businesses to maximize impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educational Resources -->
+  <section class="section section--dark">
+    <div class="container text-center">
+      <div class="section-header">
+        <h2 class="reveal reveal--up">Educational Resources</h2>
+        <hr class="pink-rule reveal reveal--delay-1">
+        <p class="reveal reveal--up reveal--delay-2">Learn more about breast cancer awareness, prevention, and treatment.</p>
+      </div>
+      <div class="grid grid--2" id="resources-grid" style="max-width: 800px; margin: 0 auto;">
+        <!-- Data-driven: loaded from data/resources.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">
+            <img src="assets/images/silo-logo-full.jpeg" alt="S.I.L.O. Foundation">
+            <span class="nav__logo-text">S.I.L.O. Foundation</span>
+          </div>
+          <p class="footer__tagline">Swan Is Love Outreach Foundation L.T.D. — Fighting breast cancer on Long Island with unwavering passion and love.</p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/ComiskeyParkLovesBoobies" target="_blank" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/thesilofoundation" target="_blank" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <a href="about.html" class="footer__link">About Us</a>
+          <a href="events.html" class="footer__link">Upcoming Events</a>
+          <a href="events.html#past-events" class="footer__link">Past Events</a>
+          <a href="store.html" class="footer__link">Store</a>
+          <a href="donate.html" class="footer__link">Donate</a>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact Us</h4>
+          <a href="tel:6313571726" class="footer__link">631-357-1726</a>
+          <a href="mailto:Thesilofoundation@gmail.com" class="footer__link">Thesilofoundation@gmail.com</a>
+          <a href="contact.html" class="footer__link">Contact Form</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; <span class="footer__year">2026</span> Swan Is Love Outreach Foundation L.T.D. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot -->
+  <div class="chatbot-bubble" id="chatbot-toggle" title="Chat with S.I.L.O.">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+  </div>
+  <div class="chatbot-window" id="chatbot-window">
+    <div class="chatbot-header">
+      <span class="chatbot-header__title">Chat with S.I.L.O.</span>
+      <button class="chatbot-header__close" id="chatbot-close">&ndash;</button>
+    </div>
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="chatbot-msg chatbot-msg--bot">Hi there! I'm the S.I.L.O. Foundation assistant. How can I help you today?</div>
+    </div>
+    <div class="chatbot-input">
+      <input type="text" id="chatbot-input" placeholder="Type a message..." autocomplete="off">
+      <button id="chatbot-send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ribbon-scroll.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script>
+    DataLoader.loadTeam('team-members');
+    DataLoader.loadResources('resources-grid');
+    DataLoader.loadHero('about', '#about-hero-bg', { storyImage: '#about-story-img' });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "home": {
+    "image": "assets/images/silo-event.jpeg",
+    "heading": "Swan Is Love Outreach",
+    "subheading": "Fighting breast cancer on Long Island through community, music, and love."
+  },
+  "about": {
+    "image": "",
+    "heading": "Our Story",
+    "subheading": "Learn about the people and passion behind S.I.L.O. Foundation",
+    "storyImage": "assets/images/silo-event2.jpeg"
+  },
+  "events": {
+    "image": "",
+    "heading": "Upcoming Events",
+    "subheading": "Join us at our next event and make a difference"
+  },
+  "store": {
+    "image": "",
+    "heading": "Shop for the Cause",
+    "subheading": "100% of proceeds support breast cancer awareness"
+  },
+  "contact": {
+    "image": "",
+    "heading": "Get In Touch",
+    "subheading": "We would love to hear from you"
+  },
+  "donate": {
+    "image": "",
+    "heading": "Every Dollar Makes a Difference",
+    "subheading": "Your donation directly supports breast cancer awareness on Long Island"
+  }
+}

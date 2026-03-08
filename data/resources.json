@@ -1,0 +1,26 @@
+[
+  {
+    "id": "about-breast-cancer",
+    "title": "About Breast Cancer",
+    "description": "Understanding the basics of breast cancer and its impact on families.",
+    "url": ""
+  },
+  {
+    "id": "risk-prevention",
+    "title": "Risk & Prevention",
+    "description": "Learn about risk factors and prevention strategies for breast cancer.",
+    "url": ""
+  },
+  {
+    "id": "key-statistics",
+    "title": "Key Statistics",
+    "description": "Important numbers and facts about breast cancer in our community.",
+    "url": ""
+  },
+  {
+    "id": "treatment-options",
+    "title": "Treatment Options",
+    "description": "Overview of modern treatment approaches and support resources.",
+    "url": ""
+  }
+]
